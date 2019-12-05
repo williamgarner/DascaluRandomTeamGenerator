@@ -1,0 +1,59 @@
+<template>
+    <div>
+        <v-row
+            class="row"
+        >
+            <v-col class="column" cols="6">
+                <v-btn-toggle ripple tile mandatory dark class="toggle" background-color="#353535">
+                    <v-btn block color="purple darken-4" class="button" x-large tile>MANUAL</v-btn>
+                    <v-btn block color="purple darken-4" class="button" x-large tile>FILE UPLOAD</v-btn>
+                </v-btn-toggle>
+            </v-col>
+        </v-row>
+    </div>
+</template>
+
+<script>
+
+
+    export default {
+        name: "StudentStuff",
+        components: {
+
+        },
+        data: () => ({
+            buttons: [
+                'Upload File',
+            ]
+        })
+    }
+</script>
+
+<style scoped>
+div{
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.button{
+    font-weight:bold
+}
+.toggle{
+    flex-direction: row;
+    background-color: #353535;
+    padding: 0;
+}
+.row{
+    padding: 0;
+    justify-content: center;
+    flex-direction: column;
+}
+.column{
+    justify-content: center;
+    padding: 0;
+}
+
+</style>
