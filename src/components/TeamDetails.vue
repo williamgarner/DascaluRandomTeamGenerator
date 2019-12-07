@@ -1,32 +1,50 @@
 <template>
-    <v-row class="row button-control" align="start" justify="end">
-        <v-btn class="button fullscreen" color="blue darken-4 white--text" @click="dialog=true" dark tile>FULL SCREEN</v-btn>
-        <v-dialog v-model="dialog" :fullscreen="fullScreen" transition="dialog-bottom-transition" :overlay=false
-                  scrollable class="noPaddingPlz">
-            <v-card class="classDisplay">
-                <v-toolbar style="flex: 0 0 auto;" class="tool-bar" >
-                    <div class="toTheLeft">Generated Teams</div>
-                    <v-btn color="blue darken-4 white--text" class="button close" @click.native="dialog = false" dark fab>
-                        x
-                    </v-btn>
-                </v-toolbar>
-                <v-card-text>
-                    <div class="card-control">
-                        <div class="card" v-for="team in teams">
-                            <v-card flat tile min-height="20rem" min-width="15rem" color="grey darken-4 white--text">
-                                <div class="card-title">Team {{team.number}}</div>
-                                <ul>
-                                    <li v-for="members in team.members">
-                                        {{members.name}}
-                                    </li>
-                                </ul>
-                            </v-card>
+    <v-row class="row button-control" fluid>
+        <v-col cols="12">
+            <v-btn block class="button fullscreen" color="blue darken-4 white--text" @click="dialog=true" dark tile>FULL SCREEN</v-btn>
+            <v-dialog v-model="dialog" :fullscreen="fullScreen" transition="dialog-bottom-transition" :overlay=false
+                      scrollable class="noPaddingPlz">
+                <v-card class="classDisplay">
+                    <v-toolbar style="flex: 0 0 auto;" class="tool-bar" >
+                        <div class="toTheLeft">Generated Teams</div>
+                        <v-btn color="blue darken-4 white--text" class="button close" @click.native="dialog = false" dark fab>
+                            x
+                        </v-btn>
+                    </v-toolbar>
+                    <v-card-text>
+                        <div class="card-control">
+                            <div class="card" v-for="team in teams">
+                                <v-card flat tile min-height="20rem" min-width="15rem" color="grey darken-4 white--text">
+                                    <div class="card-title">Team {{team.number}}</div>
+                                    <ul>
+                                        <li v-for="members in team.members">
+                                            {{members.name}}
+                                        </li>
+                                    </ul>
+                                </v-card>
+                            </div>
                         </div>
-                    </div>
-                </v-card-text>
-            </v-card>
-        </v-dialog>
-
+                    </v-card-text>
+                </v-card>
+            </v-dialog>
+            <div class="card page-card">
+                <v-card flat tile height="32rem" min-width="15rem" color="grey darken-4 white--text">
+                    <div class="card-title">Team {{teams[page-1].number}}</div>
+                    <ul>
+                        <li v-for="members in teams[page-1].members">
+                            {{members.name}}
+                        </li>
+                    </ul>
+                </v-card>
+            </div>
+            <v-pagination
+                    class="paginations"
+                    v-model="page"
+                    :length="teams.length"
+                    :total-visible="7"
+            >
+            </v-pagination>
+        </v-col>
     </v-row>
 </template>
 
@@ -34,6 +52,7 @@
     export default {
         name: "TeamDetails",
         data: () => ({
+            page: 1,
             dialog: false,
             fullScreen: true,
             search: '',
@@ -184,6 +203,13 @@
     .toTheLeft{
         justify-self: flex-start;
     }
-
+    .paginations{
+        border-radius: 0;
+    }
+    .page-card{
+        margin-left: 0;
+        margin-right: 0;
+        overflow: auto;
+    }
 
 </style>
