@@ -1,13 +1,16 @@
 <template>
     <div>
-        <v-row
-            class="row"
-        >
+        <v-row class="row">
             <v-col class="column" cols="6">
                 <v-btn-toggle ripple tile mandatory dark class="toggle" background-color="#353535">
                     <v-btn block color="purple darken-4" class="button" x-large tile>MANUAL</v-btn>
                     <v-btn block color="purple darken-4" class="button" x-large tile>FILE UPLOAD</v-btn>
                 </v-btn-toggle>
+            </v-col>
+        </v-row>
+        <v-row class="row">
+            <v-col class="column" cols="12">
+                <TeamBoi :background="'#241525'"><input><input><input></TeamBoi>
             </v-col>
         </v-row>
     </div>
@@ -16,9 +19,11 @@
 <script>
 
 
+    import TeamBoi from "./TeamBoi";
     export default {
         name: "StudentStuff",
         components: {
+            TeamBoi
 
         },
         data: () => ({
@@ -30,6 +35,12 @@
 </script>
 
 <style scoped>
+
+    input{
+        background: white;
+        color: black;
+        margin: 0.25rem;
+    }
 div{
     padding: 2rem;
     text-align: center;

@@ -1,5 +1,5 @@
 <template>
-    <div class="team">
+    <div class="team" :style="style">
         <slot>DEFAULT</slot>
     </div>
 </template>
@@ -8,6 +8,14 @@
 
     export default {
         name: "TeamBoi",
+        props: {
+            background: String
+        },
+        computed: {
+            style() {
+                return `background: ${this.background};`
+            }
+        }
     }
 </script>
 

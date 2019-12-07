@@ -1,9 +1,9 @@
 <template>
     <div class = "container">
-        <TeamBoi>
+        <TeamBoi :background="'#353535'">
             <StudentStuff></StudentStuff>
         </TeamBoi>
-        <TeamBoi>
+        <TeamBoi :background="'#353535'">
             <TeamStuff></TeamStuff>
         </TeamBoi>
     </div>
