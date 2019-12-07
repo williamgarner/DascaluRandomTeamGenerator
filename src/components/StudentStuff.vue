@@ -2,9 +2,9 @@
     <div>
         <v-row class="row">
             <v-col class="column" cols="6">
-                <v-btn-toggle ripple tile mandatory dark class="toggle" background-color="#353535">
-                    <v-btn block color="blue darken-4" class="button" x-large tile>MANUAL</v-btn>
-                    <v-btn block color="blue darken-4" class="button" x-large tile>FILE UPLOAD</v-btn>
+                <v-btn-toggle ripple tile mandatory dark class="toggle">
+                    <v-btn block color="blue darken-4" class="button" x-large tile @click="test('Manual')">MANUAL</v-btn>
+                    <v-btn block color="blue darken-4" class="button" x-large tile @click="test('File')">FILE UPLOAD</v-btn>
                 </v-btn-toggle>
 
             </v-col>
@@ -55,6 +55,9 @@
             pressEnter(event, input) {
                 event.target.nextElementSibling.focus();
                 this.addInput(input);
+            },
+            test(type) {
+                console.log(type)
             }
         }
     }
