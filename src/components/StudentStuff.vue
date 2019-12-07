@@ -2,7 +2,7 @@
     <div>
         <v-row class="row">
             <v-col class="column" cols="6">
-                <v-btn-toggle ripple tile mandatory dark class="toggle" background-color="#353535">
+                <v-btn-toggle ripple tile mandatory dark class="toggle">
                     <v-btn block color="purple darken-4" class="button" x-large tile>MANUAL</v-btn>
                     <v-btn block color="purple darken-4" class="button" x-large tile>FILE UPLOAD</v-btn>
                 </v-btn-toggle>
