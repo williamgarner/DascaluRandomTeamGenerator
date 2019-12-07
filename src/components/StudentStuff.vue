@@ -10,7 +10,15 @@
         </v-row>
         <v-row class="row">
             <v-col class="column" cols="12">
-                <TeamBoi id="names" :background="'#454545'" :shadow="false"><input><input><input></TeamBoi>
+                <TeamBoi id="names" :background="'#454545'" :shadow="false">
+                    <input
+                            v-for="(thisInput, index) in inputs"
+                            v-model="thisInput.value"
+                            :key="index"
+                            type="text"
+                            @input="addInput(thisInput)"
+                            @keyup.enter="pressEnter($event, thisInput)">
+                </TeamBoi>
             </v-col>
         </v-row>
     </div>
@@ -26,11 +34,27 @@
             TeamBoi
 
         },
-        data: () => ({
-            buttons: [
-                'Upload File',
-            ]
-        })
+        data() {
+            return {
+                buttons: ['Upload File'],
+                inputs: [{value: '', addNext: true}]
+            }
+        },
+        methods: {
+            addInput(input) {
+                if(input.addNext) {
+                    input.addNext = false;
+                    this.inputs.push({
+                        value: '',
+                        addNext: true
+                    });
+                }
+            },
+            pressEnter(event, input) {
+                event.target.nextElementSibling.focus();
+                this.addInput(input);
+            }
+        }
     }
 </script>
 
