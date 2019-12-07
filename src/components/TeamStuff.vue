@@ -40,11 +40,7 @@
         <v-row class="row">
             <v-col class="column" cols="12">
                 <TeamBoi id="teams" :background="'#353535'" :shadow="false">
-                    <v-row class="row button-control" align="start" justify="end">
-                        <v-col cols="5" class="column">
-                            <v-btn class="button" color="blue darken-4 white--text" dark tile>FULL SCREEN</v-btn>
-                        </v-col>
-                    </v-row>
+                   <TeamDetails/>
                 </TeamBoi>
             </v-col>
         </v-row>
@@ -57,19 +53,20 @@
 
 
     import TeamBoi from "./TeamBoi";
+    import TeamDetails from "./TeamDetails";
 
     export default {
         name: "TeamStuff",
         components: {
-            TeamBoi
+            TeamBoi,
+            TeamDetails
         },
         data: () => ({
             buttons: [
                 'GENERIC',
                 'YES'
             ],
-            nums:[1,2,3,4,5]
-
+            nums:[1,2,3,4,5],
         })
     }
 </script>
@@ -87,6 +84,7 @@
     .button{
         font-weight:bold;
         flex-grow: 1;
+        font-style: normal;
     }
     .toggle{
         flex-direction: row;
@@ -111,7 +109,5 @@
         padding: 0;
         font-weight: bold;
     }
-    .button-control{
-        height:1rem;
-    }
+
 </style>
