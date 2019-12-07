@@ -1,18 +1,18 @@
 <template>
   <v-container fluid>
-    <h1>{{ msg }}</h1>
+    <h1>
+      THE DASCALU RANDOM TEAM GENERATOR
+      <v-progress-linear value="40" height="26" color="purple darken-4" background-color="#353535" rounded="true"/>
+    </h1>
     <v-row justify="center">
-      <v-col
-        cols="6"
-      >
-        <TeamBoi :background="'#202020'" :shadow="true">
-          <StudentStuff></StudentStuff>
+      <v-col cols="6">
+        <TeamBoi :background="'#353535'" :shadow="true">
+          <StudentStuff/>
         </TeamBoi>
       </v-col>
-      <v-col
-        cols="6">
-        <TeamBoi :background="'#202020'" :shadow="true">
-          <TeamStuff></TeamStuff>
+      <v-col cols="6">
+        <TeamBoi :background="'#353535'" :shadow="true">
+          <TeamStuff/>
         </TeamBoi>
       </v-col>
     </v-row>
@@ -31,16 +31,7 @@ export default {
     TeamStuff,
     StudentStuff,
     TeamBoi
-  },
-  props: {
-    msg: String
-  },
-  data: () =>( {
-    pageLayout: [
-      '<StudentStuff></StudentStuff>',
-      '<TeamStuff></TeamStuff>'
-    ]
-  })
+  }
 }
 </script>
 
