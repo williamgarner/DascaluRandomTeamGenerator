@@ -2,16 +2,14 @@
     <div>
         <v-row class="row">
             <v-text-field dark
-                      class="select"
-                    label="NUMBER OF TEAMS"
+                          class="select"
+                          label="NUMBER OF TEAMS"
                           max="50"
                           min="1"
                           step="1"
-            ></v-text-field>
+            />
         </v-row>
-        <v-row
-                class="row"
-        >
+        <v-row class="row">
             <v-col cols="4" class="column">
                 <div class="label">TEAM NAMES</div>
             </v-col>
@@ -23,9 +21,7 @@
             </v-col>
 
         </v-row>
-        <v-row
-                class="row"
-        >
+        <v-row class="row">
             <v-col cols="4" class="column">
                 <div class="label">DISTRIBUTION</div>
             </v-col>

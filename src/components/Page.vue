@@ -1,12 +1,13 @@
 <template>
   <v-container fluid>
-    <v-row justify="center">
-      <v-col cols="8">
+    <v-row justify="center" align="center">
+      <v-col>
         <h1>THE DASCALU RANDOM TEAM GENERATOR</h1>
       </v-col>
-      <v-col cols="3">
-        <h2><v-progress-linear value="40" height="60" color="black" background-color="#353535" bottom="true"/></h2>
-      </v-col>
+      <v-col cols="4">
+        <v-btn class="ma-2" block="true" height="60" tile color="#2337ad" dark v-if="buttonShowing" @click="progressButton">Generate Teams</v-btn>
+        <v-progress-linear value="40" height="60" color="#2337ad" background-color="#353535"v-else/>
+       </v-col>
     </v-row>
     <v-row justify="center">
       <v-col cols="6">
@@ -30,11 +31,21 @@
   import TeamStuff from "./TeamStuff";
 
 export default {
-  name: 'Page',
+  name: 'Page', /*name of vue*/
   components: {
     TeamStuff,
     StudentStuff,
     TeamBoi
+  },
+  data() {
+    return {
+      buttonShowing: true
+    }
+  },
+  methods: {
+    progressButton(){
+      this.buttonShowing = !this.buttonShowing
+    }
   }
 }
 </script>
@@ -44,9 +55,6 @@ export default {
   h1{
     /*Padding: 2rem;
       padding-top: 2rem; */
-  }
-  h2{
-    padding-top: 1rem;
   }
   h3 {
     margin: 40px 0 0;
