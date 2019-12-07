@@ -7,7 +7,6 @@
 
 <script>
     import Page from './src/components/Page.vue'
-
     export default {
       name: 'app',
       components: {

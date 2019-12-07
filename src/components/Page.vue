@@ -1,16 +1,16 @@
 <template>
   <v-container fluid>
-    <h1>{{ msg }}</h1>
+    <h1>
+      {{ msg }}
+      <v-progress-linear value="40" height="26" color="purple darken-4" background-color="#353535" rounded="true"></v-progress-linear>
+    </h1>
     <v-row justify="center">
-      <v-col
-        cols="6"
-      >
+      <v-col cols="6">
         <TeamBoi :background="'#353535'" :shadow="true">
           <StudentStuff></StudentStuff>
         </TeamBoi>
       </v-col>
-      <v-col
-        cols="6">
+      <v-col cols="6">
         <TeamBoi :background="'#353535'" :shadow="true">
           <TeamStuff></TeamStuff>
         </TeamBoi>
@@ -38,7 +38,8 @@ export default {
   data: () =>( {
     pageLayout: [
       '<StudentStuff></StudentStuff>',
-      '<TeamStuff></TeamStuff>'
+      '<TeamStuff></TeamStuff>',
+
     ]
   })
 }
