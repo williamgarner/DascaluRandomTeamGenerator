@@ -150,7 +150,8 @@
     }
     .card{
         margin: 1rem;
-        background-color: #202020;
+        background-color: #212121;
+        box-shadow: .5rem .5rem .75rem #000000;
     }
     .card-title{
         position: sticky;
@@ -171,7 +172,7 @@
 
     }
     .tool-bar{
-        background-color: #202020;
+        background-color: #212121;
         display: flex;
         padding: 0 1rem;
         color: white;
@@ -214,6 +215,7 @@
         margin-left: 0;
         margin-right: 0;
         overflow: auto;
+        box-shadow: none;
     }
 
 </style>
