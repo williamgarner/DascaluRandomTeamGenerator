@@ -3,8 +3,8 @@
         <v-row class="row">
             <v-col class="column" cols="6">
                 <v-btn-toggle ripple tile mandatory dark class="toggle">
-                    <v-btn block color="blue darken-4" class="button" x-large tile @click="test('Manual')">MANUAL</v-btn>
-                    <v-btn block color="blue darken-4" class="button" x-large tile @click="test('File')">FILE UPLOAD</v-btn>
+                    <v-btn block color="blue darken-4" class="button" x-large tile @click="changeToggle(true)">MANUAL</v-btn>
+                    <v-btn block color="blue darken-4" class="button" x-large tile @click="changeToggle(false)">FILE UPLOAD</v-btn>
                 </v-btn-toggle>
 
             </v-col>
@@ -39,7 +39,8 @@
         data() {
             return {
                 buttons: ['Upload File'],
-                inputs: [{value: '', addNext: true}]
+                inputs: [{value: '', addNext: true}],
+                manualSelected: true,
             }
         },
         methods: {
@@ -56,8 +57,8 @@
                 event.target.nextElementSibling.focus();
                 this.addInput(input);
             },
-            test(type) {
-                console.log(type)
+            changeToggle(isManualSelected) {
+                this.manualSelected = isManualSelected;
             }
         }
     }
