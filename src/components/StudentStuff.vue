@@ -2,23 +2,24 @@
     <div>
         <v-row class="row">
             <v-col class="column" cols="6">
-                <v-btn-toggle ripple tile mandatory dark class="toggle">
-                    <v-btn block color="purple darken-4" class="button" x-large tile>MANUAL</v-btn>
-                    <v-btn block color="purple darken-4" class="button" x-large tile>FILE UPLOAD</v-btn>
+                <v-btn-toggle ripple tile mandatory dark class="toggle" background-color="#353535">
+                    <v-btn block color="blue darken-4" class="button" x-large tile>MANUAL</v-btn>
+                    <v-btn block color="blue darken-4" class="button" x-large tile>FILE UPLOAD</v-btn>
                 </v-btn-toggle>
 
             </v-col>
         </v-row>
         <v-row class="row">
             <v-col class="column" cols="12">
-                <TeamBoi id="names" :background="'#454545'" :shadow="false">
+                <TeamBoi id="names" :background="'#303030'" :shadow="false">
                     <input
                             v-for="(thisInput, index) in inputs"
                             v-model="thisInput.value"
                             :key="index"
                             type="text"
                             @input="addInput(thisInput)"
-                            @keyup.enter="pressEnter($event, thisInput)">
+                            @keyup.enter="pressEnter($event, thisInput)"
+                            class="input">
                 </TeamBoi>
             </v-col>
         </v-row>
@@ -61,14 +62,15 @@
 
 <style scoped>
 
-input{
-    background: #454545;
+.input{
+    background-color: #454545;
     color: white;
     margin: 0.25rem;
 }
-input:focus{
-    outline-color: #6B42A0;
-    background-color: #6B42A0;
+.input:focus{
+    outline-color: #19428B;
+    background-color: #19428B;
+    color: white;
 }
 
 div{

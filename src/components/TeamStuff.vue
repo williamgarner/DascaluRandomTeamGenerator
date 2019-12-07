@@ -17,8 +17,8 @@
             </v-col>
             <v-col cols="8" class="column">
                 <v-btn-toggle tile mandatory dark class="toggle" background-color="#353535">
-                    <v-btn color="purple darken-4" class="button" x-large tile>GENERIC</v-btn>
-                    <v-btn color="purple darken-4" class="button" x-large tile>CUSTOM</v-btn>
+                    <v-btn color="blue darken-4" class="button" x-large tile>GENERIC</v-btn>
+                    <v-btn color="blue darken-4" class="button" x-large tile>CUSTOM</v-btn>
                 </v-btn-toggle>
             </v-col>
 
@@ -31,8 +31,8 @@
             </v-col>
             <v-col cols="8" class="column">
                 <v-btn-toggle tile mandatory dark class="toggle" background-color="#353535">
-                    <v-btn color="purple darken-4" class="button" x-large tile>EVEN</v-btn>
-                    <v-btn color="purple darken-4" class="button" x-large tile>CUSTOM</v-btn>
+                    <v-btn color="blue darken-4" class="button" x-large tile>EVEN</v-btn>
+                    <v-btn color="blue darken-4" class="button" x-large tile>CUSTOM</v-btn>
                 </v-btn-toggle>
             </v-col>
 
