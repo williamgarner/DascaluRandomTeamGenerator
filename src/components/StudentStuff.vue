@@ -11,7 +11,7 @@
         </v-row>
         <v-row class="row">
             <v-col class="column" cols="12">
-                <TeamBoi id="names" :background="'#303030'" :shadow="false">
+                <TeamBoi v-if="manualSelected" id="names" :background="'#303030'" :shadow="false">
                     <input
                             v-for="(thisInput, index) in inputs"
                             v-model="thisInput.value"
@@ -20,6 +20,9 @@
                             @input="addInput(thisInput)"
                             @keyup.enter="pressEnter($event, thisInput)"
                             class="input">
+                </TeamBoi>
+                <TeamBoi v-else id="file" :background="'#303030'" :shadow="false">
+                    <FileUpload></FileUpload>
                 </TeamBoi>
             </v-col>
         </v-row>
@@ -30,9 +33,11 @@
 
 
     import TeamBoi from "./TeamBoi";
+    import FileUpload from "./FileUpload";
     export default {
         name: "StudentStuff",
         components: {
+            FileUpload,
             TeamBoi
 
         },
@@ -84,7 +89,7 @@ div{
     flex-direction: column;
     justify-content: left;
 }
-    #names{
+    #names, #file{
         margin-top: 2rem;
     }
 

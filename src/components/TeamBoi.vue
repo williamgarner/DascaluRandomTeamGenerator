@@ -23,7 +23,7 @@
 <style scoped>
 .team{
     flex-grow: 1;
-    margin: 0 1rem;
+    margin: 0 1.5rem;
     min-height:45rem;
 }
 </style>
