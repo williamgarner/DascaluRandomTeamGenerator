@@ -13,14 +13,20 @@
                 <v-card-text>
                     <div class="card-control">
                         <div class="card" v-for="team in teams">
-                            <v-card tile min-height="20rem" min-width="15rem">
-                                {{team.number}}
+                            <v-card flat tile min-height="20rem" min-width="15rem" color="grey darken-4 white--text">
+                                <div class="card-title">Team {{team.number}}</div>
+                                <ul>
+                                    <li v-for="members in team.members">
+                                        {{members.name}}
+                                    </li>
+                                </ul>
                             </v-card>
                         </div>
                     </div>
                 </v-card-text>
             </v-card>
         </v-dialog>
+
     </v-row>
 </template>
 
@@ -34,26 +40,70 @@
             pagination: {},
             selected: [],
             teams: [
-                {number: 'one'},
-                {number:'two'},
-                {number:'three'},
-                {number:'four'},
-                {number:'five'},
-                {number: 'one'},
-                {number:'two'},
-                {number:'three'},
-                {number:'four'},
-                {number:'five'},
-                {number: 'one'},
-                {number:'two'},
-                {number:'three'},
-                {number:'four'},
-                {number:'five'},
-                {number: 'one'},
-                {number:'two'},
-                {number:'three'},
-                {number:'four'},
-                {number:'five'},
+                {
+                    number: '1',
+                    members: [{name:'Will'}, {name:'Leah'}, {name:'Natalie'},{name:'Will'}, {name:'Leah'}, {name:'Natalie'},{name:'Will'}, {name:'Leah'}, {name:'Natalie'},{name:'Will'}, {name:'Leah'}, {name:'Natalie'}]
+                },
+                {
+                    number:'2',
+                    members: [{name:'Terra'}, {name:'Derek'}]
+                },
+                {
+                    number:'3',
+                    members: []
+                },
+                {
+                    number:'4',
+                    members: []
+                },
+                {number:'5',
+                    members: []
+                },
+                {number: '6',
+                    members: []
+                },
+                {number:'7',
+                    members: []
+                },
+                {number:'8',
+                    members: []
+                },
+                {number:'9',
+                    members: []
+                },
+                {number:'10',
+                    members: []
+                },
+                {number: '11',
+                    members: []
+                },
+                {number:'12',
+                    members: []
+                },
+                {number:'13',
+                    members: []
+                },
+                {number:'14',
+                    members: []
+                },
+                {number:'15',
+                    members: []
+                },
+                {number: '16',
+                    members: []
+                },
+                {number:'17',
+                    members: []
+                },
+                {number:'18',
+                    members: []
+                },
+                {number:'19',
+                    members: []
+                },
+                {number:'20',
+                    members: []
+                },
             ]
 
         }),
@@ -66,6 +116,13 @@
 </script>
 
 <style scoped>
+    li{
+        font-size: 1.5rem;
+        margin-bottom: .5rem;
+    }
+    ul{
+        margin-left: 1rem;
+    }
     .button-control{
         height:1rem;
     }
@@ -74,6 +131,11 @@
     }
     .card{
         margin: 1rem;
+        background-color: #202020;
+    }
+    .card-title{
+        padding: 1rem;
+        font-size: 2rem;
     }
     .classDisplay{
         background-image: url("../../assets/images/betterBlue.jpg");
