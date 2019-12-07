@@ -2,11 +2,10 @@
     <div>
         <v-row class="row">
             <v-col class="column" cols="6">
-                <v-btn-toggle ripple tile mandatory dark class="toggle">
-                    <v-btn block color="blue darken-4" class="button" x-large tile @click="changeToggle(true)">MANUAL</v-btn>
-                    <v-btn block color="blue darken-4" class="button" x-large tile @click="changeToggle(false)">FILE UPLOAD</v-btn>
+                <v-btn-toggle tile mandatory dark class="toggle">
+                    <v-btn block color="blue darken-4" class="button" large tile @click="changeToggle(true)">MANUAL</v-btn>
+                    <v-btn block color="blue darken-4" class="button" large tile @click="changeToggle(false)">FILE UPLOAD</v-btn>
                 </v-btn-toggle>
-
             </v-col>
         </v-row>
         <v-row class="row">
@@ -46,6 +45,9 @@
                 buttons: ['Upload File'],
                 inputs: [{value: '', addNext: true}],
                 manualSelected: true,
+                test: {
+                    background: white
+                }
             }
         },
         methods: {
@@ -81,6 +83,10 @@
     background-color: #19428B;
     color: white;
 }
+.selected{
+    background-color: white;
+}
+
 
 div{
     padding: 2rem;
@@ -107,12 +113,15 @@ div{
     }
 
     .button{
-        font-weight:bold
+        font-weight:bold;
+        flex-grow: 1;
+        font-size: 1.5rem;
     }
     .toggle{
         flex-direction: row;
         background-color: #353535;
         padding: 0;
+        display: flex;
     }
     .row{
         padding: 0;
