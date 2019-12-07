@@ -153,8 +153,12 @@
         background-color: #202020;
     }
     .card-title{
+        position: sticky;
+        top: 0;
         padding: 1rem;
         font-size: 2rem;
+        background-color: #212121;
+        flex-grow: 1;
     }
     .classDisplay{
         background-image: url("../../assets/images/betterBlue.jpg");
