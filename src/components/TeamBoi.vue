@@ -9,11 +9,12 @@
     export default {
         name: "TeamBoi",
         props: {
-            background: String
+            background: String,
+            shadow: Boolean
         },
         computed: {
             style() {
-                return `background: ${this.background};`
+                return `background: ${this.background};` + (this.shadow ? ' box-shadow: 1rem 1rem .5rem #202020;' : '');
             }
         }
     }
@@ -21,8 +22,6 @@
 
 <style scoped>
 .team{
-    box-shadow: 1rem 1rem .5rem #202020;
-    background: #353535;
     flex-grow: 1;
     margin: 0 1rem;
     min-height:45rem;

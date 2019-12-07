@@ -5,13 +5,13 @@
       <v-col
         cols="6"
       >
-        <TeamBoi>
+        <TeamBoi :background="'#353535'" :shadow="true">
           <StudentStuff></StudentStuff>
         </TeamBoi>
       </v-col>
       <v-col
         cols="6">
-        <TeamBoi>
+        <TeamBoi :background="'#353535'" :shadow="true">
           <TeamStuff></TeamStuff>
         </TeamBoi>
       </v-col>
