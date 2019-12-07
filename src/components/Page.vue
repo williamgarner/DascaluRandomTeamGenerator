@@ -1,11 +1,11 @@
 <template>
   <v-container fluid>
-    <v-row align="start" justify="center">
-      <v-col cols="9">
-        <h1> THE DASCALU RANDOM TEAM GENERATOR</h1>
+    <v-row justify="center">
+      <v-col cols="8">
+        <h1>THE DASCALU RANDOM TEAM GENERATOR</h1>
       </v-col>
       <v-col cols="3">
-        <v-progress-linear value="40" height="40" color="black" background-color="#353535"/>
+        <h2><v-progress-linear value="40" height="60" color="black" background-color="#353535" bottom="true"/></h2>
       </v-col>
     </v-row>
     <v-row justify="center">
@@ -42,8 +42,11 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   h1{
-    padding: 0 7.5rem;
-    padding-top: 2rem;
+    /*Padding: 2rem;
+      padding-top: 2rem; */
+  }
+  h2{
+    padding-top: 1rem;
   }
   h3 {
     margin: 40px 0 0;
@@ -59,5 +62,7 @@ export default {
   a {
     color: #42b983;
   }
+
+
 
 </style>
