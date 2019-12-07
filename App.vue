@@ -22,7 +22,6 @@
     body{
         height: 100%;
         width: 100%;
-        background: #292929;
     }
     #app {
         /*font-family: 'Avenir', Helvetica, Arial, sans-serif;*/
@@ -33,7 +32,12 @@
         color: #FFFFFF;
         font-size: 2vw;
         max-height: 100%;
-        background: #292929;
+
+        background-image: url("./assets/images/purple.jpg");
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
     #blockColorblindContent{
         height: 0;

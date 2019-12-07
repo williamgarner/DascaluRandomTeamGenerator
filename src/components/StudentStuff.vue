@@ -60,6 +60,23 @@
 
 <style scoped>
 
+input{
+    background: #454545;
+    color: white;
+    margin: 0.25rem;
+}
+input:focus{
+    outline-color: #6B42A0;
+    background-color: #6B42A0;
+}
+
+div{
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
     #names{
         margin-top: 2rem;
     }
@@ -94,5 +111,9 @@
         justify-content: center;
         padding: 0;
     }
+
+#teams{
+    margin-top: 2rem;
+}
 
 </style>
