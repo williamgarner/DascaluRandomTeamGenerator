@@ -1,9 +1,13 @@
 <template>
   <v-container fluid>
-    <h1>
-      THE DASCALU RANDOM TEAM GENERATOR
-      <v-progress-linear value="40" height="26" color="blue darken-4" background-color="#303030" rounded="true"/>
-    </h1>
+    <v-row align="start" justify="center">
+      <v-col cols="9">
+        <h1> THE DASCALU RANDOM TEAM GENERATOR</h1>
+      </v-col>
+      <v-col cols="3">
+        <v-progress-linear value="40" height="40" color="black" background-color="#353535"/>
+      </v-col>
+    </v-row>
     <v-row justify="center">
       <v-col cols="6">
         <TeamBoi :background="'#202020'" :shadow="true">
