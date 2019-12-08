@@ -162,7 +162,7 @@
         flex-grow: 1;
     }
     .classDisplay{
-        background-image: url("../../assets/images/betterBlue.jpg");
+        background-image: url("../assets/betterBlue.jpg");
         background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;

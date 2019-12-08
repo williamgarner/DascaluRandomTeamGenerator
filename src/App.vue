@@ -1,60 +1,51 @@
 <template>
-  <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
-
-    <v-content>
-
-    </v-content>
+  <v-app id="app">
+    <!--    <img alt="Vue logo" src="./src/assets/logo.png">-->
+    <Page msg="THE DASCALU RANDOM TEAM GENERATOR"/>
   </v-app>
 </template>
 
 <script>
-import TeamGenerator from './components/TeamGenerator';
-
-export default {
-  name: 'App',
-
-  components: {
-    TeamGenerator,
-  },
-
-  data: () => ({
-    //
-  }),
-};
+  import Page from './components/Page.vue'
+  export default {
+    name: 'app',
+    components: {
+      Page
+    }
+  }
 </script>
+
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap');
+
+  body{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+  #app {
+    overflow: hidden;
+    /*font-family: 'Avenir', Helvetica, Arial, sans-serif;*/
+    font-family: 'Open Sans Condensed', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: left;
+    color: #FFFFFF;
+    font-size: 2vw;
+    max-height: 100%;
+
+    background-image: url("./assets/betterBlue.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    padding: 0rem 0.5rem;
+  }
+  #blockColorblindContent{
+    height: 0;
+  }
+  #colorBlindSVG{
+    height: 0;
+  }
+</style>
