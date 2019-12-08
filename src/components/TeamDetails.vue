@@ -212,8 +212,8 @@
         border-radius: 0;
     }
     .page-card{
-        margin-left: 0;
-        margin-right: 0;
+        margin-left: 3rem;
+        margin-right: 3rem;
         overflow: auto;
         box-shadow: none;
     }

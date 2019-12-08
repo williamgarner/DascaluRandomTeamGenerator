@@ -3,7 +3,7 @@
         <TeamBoi :background="'#303030'" :shadow="false" style="margin: 0; padding: 0; height: 5rem">
             <v-row dense class="row" align-content="center" justify="center">
                 <v-col cols="4" class="column">
-                    <v-checkbox v-model="headersSelected" class="button" label="Headers Included" style="color: white"></v-checkbox>
+                    <v-checkbox v-model="headersSelected" class="button" label="Headers Included" dark/>
                 </v-col>
                 <v-col cols="7" class="column">
                     <v-btn style="color: white;" class="button" block color="blue darken-4" x-large tile @click="$refs.fileUpload.click()">Click to Upload Names</v-btn>
