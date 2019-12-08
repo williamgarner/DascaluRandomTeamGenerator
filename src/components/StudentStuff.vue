@@ -12,7 +12,7 @@
             </v-row>
         </TeamBoi>
         <TeamBoi :background="'#303030'" :shadow="false" style="overflow: auto; min-height: 3rem; max-height: 25rem">
-            <NameInputs :inputs="inputs"/>
+            <NameInputs/>
         </TeamBoi>
 </div>
 </template>
@@ -34,7 +34,6 @@
         data() {
             return {
                 buttons: ['Upload File'],
-                inputs: [{value: '', addNext: true}],
                 headersSelected: false
             }
         },
@@ -53,15 +52,15 @@
                         let names = event.target.result.split('\n');
                         if(this.headersSelected)
                             names = names.splice(1);
-                        if(this.inputs.length)
-                            this.inputs.length = 0;
+                        if(this.$store.state.names.length)
+                            this.$store.state.names.length = 0;
 
 
                         names.forEach((name) => {
                             if(name !== '')
-                                this.inputs.push({value: name, addNext: false})
+                                this.$store.state.names.push({value: name, addNext: false})
                         });
-                        this.inputs.push({value: '', addNext: true});
+                        this.$store.state.names.push({value: '', addNext: true});
                     };
 
                     reader.onerror = function(evt) {
