@@ -10,6 +10,7 @@
 		@focusout="checkForBlank(thisInput, index)"
 		class="input"
 		style="width: 100%"
+		placeholder="Type Name"
 		>
 	</label>
 </template>
@@ -68,6 +69,10 @@
 		outline-color: #19428B;
 		background-color: #19428B;
 		color: white;
+	}
+
+	input::placeholder {
+		text-align: center;
 	}
 
 </style>
