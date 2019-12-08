@@ -1,45 +1,19 @@
 <template>
     <div>
-        <v-row class="row">
-            <v-text-field dark
-                          class="select"
-                          label="NUMBER OF TEAMS"
-                          max="50"
-                          min="1"
-                          step="1"
-            />
-        </v-row>
-        <v-row class="row">
-            <v-col cols="4" class="column">
-                <div class="label">TEAM NAMES</div>
-            </v-col>
-            <v-col cols="8" class="column">
-                <v-btn-toggle tile mandatory dark class="toggle" background-color="#353535">
-                    <v-btn color="blue darken-4" class="button" large tile>GENERIC</v-btn>
-                    <v-btn color="blue darken-4" class="button" large tile>CUSTOM</v-btn>
-                </v-btn-toggle>
-            </v-col>
-
-        </v-row>
-        <v-row class="row">
-            <v-col cols="4" class="column">
-                <div class="label">DISTRIBUTION</div>
-            </v-col>
-            <v-col cols="8" class="column">
-                <v-btn-toggle tile mandatory dark class="toggle" background-color="#353535">
-                    <v-btn color="blue darken-4" class="button" large tile>EVEN</v-btn>
-                    <v-btn color="blue darken-4" class="button" large tile>CUSTOM</v-btn>
-                </v-btn-toggle>
-            </v-col>
-
-        </v-row>
-        <v-row class="row">
-            <v-col class="column" cols="12">
-                <TeamBoi id="teams" :background="'#353535'" :shadow="false">
-                   <TeamDetails/>
-                </TeamBoi>
-            </v-col>
-        </v-row>
+        <TeamBoi :background="'#303030'" :shadow="false" style="margin: 0; padding: 0; height: 5rem">
+            <v-row dense class="row" align-content="center" justify="center">
+                <v-col cols="4" class="column">
+                    <v-checkbox v-model="headersSelected" class="button" label="Number of Teams" dark/>
+                </v-col>
+                <v-col cols="7" class="column">
+                    <v-btn dark class="button" color="blue darken-4 white--text" large tile>Click to Upload Names</v-btn>
+                    <input hidden type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" ref="fileUpload" @click="clearInput" @change="parseFile($event.target.name, $event.target.files)" >
+                </v-col>
+            </v-row>
+        </TeamBoi>
+        <TeamBoi id="teams" :background="'#353535'" :shadow="false" style="overflow: auto; height: 30rem">
+           <TeamDetails/>
+        </TeamBoi>
 
     </div>
 </template>
@@ -76,34 +50,21 @@
         justify-content: left;
         font-size: 1.5rem;
     }
-
-    .button{
-        font-weight:bold;
-        flex-grow: 1;
-        font-style: normal;
-    }
-    .toggle{
-        flex-direction: row;
-        background-color: #353535;
-        padding: 0;
-        display:flex;
-    }
     .row{
         padding: 0;
         justify-content: center;
         flex-direction: row;
-        margin-bottom:1rem;
     }
     .column{
         padding: 0;
         justify-content: center;
+        max-height: 3rem;
     }
-    .label{
-        padding:0;
-    }
-    .select{
-        padding: 0;
-        font-weight: bold;
+    .button{
+        font-weight:bold;
+        flex-grow: 1;
+        font-style: normal;
+        color: white;
     }
 
 </style>

@@ -104,9 +104,7 @@ div{
     flex-direction: column;
     justify-content: left;
 }
-    #names, #file{
-        margin-top: 2rem;
-    }
+
     div{
         padding: 2rem;
         text-align: center;
@@ -114,16 +112,5 @@ div{
         flex-direction: column;
         justify-content: left;
     }
-
-    .toggle{
-        flex-direction: row;
-        background-color: #353535;
-        padding: 0;
-        display: flex;
-    }
-
-#teams{
-    margin-top: 2rem;
-}
 
 </style>
