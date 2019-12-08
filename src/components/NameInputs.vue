@@ -1,7 +1,7 @@
 <template>
 	<label style="width: 100%;">
 		<input
-		v-for="(thisInput, index) in inputs"
+		v-for="(thisInput, index) in savedInputs"
 		v-model="thisInput.value"
 		:key="index"
 		type="text"
@@ -25,11 +25,19 @@
 				}
 			},
 		},
+		data() {
+			return {
+				savedInputs: []
+			}
+		},
+		created() {
+			this.savedInputs = this.inputs;
+		},
 		methods: {
 			addInput(input) {
 				if(input.addNext) {
 					input.addNext = false;
-					this.inputs.push({
+					this.savedInputs.push({
 						value: '',
 						addNext: true
 					});
@@ -41,7 +49,7 @@
 			},
 			checkForBlank(input, inputIndex) {
 				if(input.value === '' && !input.addNext)
-					this.inputs = this.inputs.filter((input, index) => {
+					this.savedInputs = this.savedInputs.filter((input, index) => {
 						return index !== inputIndex
 					});
 			}

@@ -6,7 +6,7 @@
       </v-col>
       <v-col cols="4">
         <h2>
-          <v-btn class="button" block="true" height="60" tile color="#2337ad" dark v-if="buttonShowing" @click="progressButton">Generate Teams</v-btn>
+          <v-btn class="button" :block="true" height="60" tile color="#2337ad" dark v-if="buttonShowing" @click="progressButton">Generate Teams</v-btn>
           <v-progress-linear stream buffer-value="0" height="60" color="#2337ad" background-color="#353535"v-else/>
         </h2>
        </v-col>

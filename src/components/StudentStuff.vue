@@ -40,10 +40,7 @@
             return {
                 buttons: ['Upload File'],
                 inputs: [{value: '', addNext: true}],
-                manualSelected: true,
-                test: {
-                    background: white
-                }
+                manualSelected: true
             }
         },
         methods: {
