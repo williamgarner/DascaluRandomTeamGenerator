@@ -9,8 +9,6 @@
   },
   "dependencies": {
     "core-js": "^3.3.2",
-    "csv-parser": "^2.3.2",
-    "fs": "0.0.1-security",
     "vue": "^2.6.10",
     "vuetify": "^2.1.0"
   },
