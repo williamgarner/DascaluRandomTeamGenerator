@@ -12,17 +12,10 @@
         <v-row class="row">
             <v-col class="column" cols="12">
                 <TeamBoi v-if="manualSelected" id="names" :background="'#303030'" :shadow="false">
-                    <input
-                            v-for="(thisInput, index) in inputs"
-                            v-model="thisInput.value"
-                            :key="index"
-                            type="text"
-                            @input="addInput(thisInput)"
-                            @keyup.enter="pressEnter($event, thisInput)"
-                            class="input">
+                    <NameInputs/>
                 </TeamBoi>
                 <TeamBoi v-else id="file" :background="'#303030'" :shadow="false">
-                    <FileUpload></FileUpload>
+                    <FileUpload/>
                 </TeamBoi>
             </v-col>
         </v-row>
@@ -34,9 +27,11 @@
 
     import TeamBoi from "./TeamBoi";
     import FileUpload from "./FileUpload";
+    import NameInputs from "./NameInputs";
     export default {
         name: "StudentStuff",
         components: {
+            NameInputs,
             FileUpload,
             TeamBoi
 
@@ -49,19 +44,6 @@
             }
         },
         methods: {
-            addInput(input) {
-                if(input.addNext) {
-                    input.addNext = false;
-                    this.inputs.push({
-                        value: '',
-                        addNext: true
-                    });
-                }
-            },
-            pressEnter(event, input) {
-                event.target.nextElementSibling.focus();
-                this.addInput(input);
-            },
             changeToggle(isManualSelected) {
                 this.manualSelected = isManualSelected;
             }
@@ -70,17 +52,6 @@
 </script>
 
 <style scoped>
-
-.input{
-    background-color: #454545;
-    color: white;
-    margin: 0.25rem;
-}
-.input:focus{
-    outline-color: #19428B;
-    background-color: #19428B;
-    color: white;
-}
 
 div{
     padding: 2rem;
@@ -91,12 +62,6 @@ div{
 }
     #names, #file{
         margin-top: 2rem;
-    }
-
-    input{
-        background: white;
-        color: black;
-        margin: 0.25rem;
     }
     div{
         padding: 2rem;
