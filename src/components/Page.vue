@@ -12,12 +12,12 @@
        </v-col>
     </v-row>
     <v-row justify="center">
-      <v-col cols="6">
+      <v-col cols="6" style="padding: 0 0.4rem">
         <TeamBoi :background="'#202020'" :shadow="true">
           <StudentStuff/>
         </TeamBoi>
       </v-col>
-      <v-col cols="6">
+      <v-col cols="6" style="padding: 0 0.4rem">
         <TeamBoi :background="'#202020'" :shadow="true">
           <TeamStuff/>
         </TeamBoi>

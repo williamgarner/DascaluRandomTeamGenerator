@@ -40,6 +40,7 @@
         },
         methods: {
             clearInput() {
+                alert("This will overwrite any names that are already there")
                 this.$refs.fileUpload.value = '';
             },
             parseFile(fieldName, fileList) {
