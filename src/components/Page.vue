@@ -18,7 +18,7 @@
         </TeamBoi>
       </v-col>
       <v-col cols="6" style="padding: 0 0.4rem">
-        <TeamBoi :background="'#202020'" :shadow="true">
+        <TeamBoi :background="'#202020'" :shadow="true">spm
           <TeamStuff/>
         </TeamBoi>
       </v-col>
@@ -47,9 +47,10 @@ export default {
   methods: {
     progressButton() {
       this.buttonShowing = !this.buttonShowing;
-      var snd = new Audio("assets/audio/notYourTeam.wav");
-      snd.currentTime=0;
-      snd.play();
+      var notTeamSnd = new Audio(require("C:\\Users\\LKram\\IdeaProjects\\DascaluRandomTeamGenerator\\assets\\audio\\notYourTeam.wav"));
+      notTeamSnd.play()
+      notTeamSnd.currentTime=0;
+      notTeam
     }
   }
 }
