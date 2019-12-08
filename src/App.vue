@@ -1,7 +1,7 @@
 <template>
   <v-app id="app">
     <!--    <img alt="Vue logo" src="./src/assets/logo.png">-->
-    <Page msg="THE DASCALU RANDOM TEAM GENERATOR"/>
+    <Page/>
   </v-app>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
 	<label style="width: 100%;">
 		<input
-		v-for="(thisInput, index) in savedInputs"
+		v-for="(thisInput, index) in this.$store.state.names"
 		v-model="thisInput.value"
 		:key="index"
 		type="text"
@@ -18,27 +18,11 @@
 <script>
 	export default {
 		name: "NameInputs",
-		props: {
-			inputs: {
-				type: Array,
-				default() {
-					return [{value: '', addNext: true}]
-				}
-			},
-		},
-		data() {
-			return {
-				savedInputs: []
-			}
-		},
-		created() {
-			this.savedInputs = this.inputs;
-		},
 		methods: {
 			addInput(input) {
 				if(input.addNext) {
 					input.addNext = false;
-					this.savedInputs.push({
+					this.$store.state.names.push({
 						value: '',
 						addNext: true
 					});
@@ -50,7 +34,7 @@
 			},
 			checkForBlank(input, inputIndex) {
 				if(input.value === '' && !input.addNext)
-					this.savedInputs = this.savedInputs.filter((input, index) => {
+					this.$store.state.names = this.$store.state.names.filter((input, index) => {
 						return index !== inputIndex
 					});
 			}
