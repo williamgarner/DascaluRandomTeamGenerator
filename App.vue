@@ -23,6 +23,7 @@
         width: 100%;
     }
     #app {
+        overflow: hidden;
         /*font-family: 'Avenir', Helvetica, Arial, sans-serif;*/
         font-family: 'Open Sans Condensed', sans-serif;
         -webkit-font-smoothing: antialiased;

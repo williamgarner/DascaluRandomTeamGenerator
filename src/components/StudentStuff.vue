@@ -11,7 +11,7 @@
                 </v-col>
             </v-row>
         </TeamBoi>
-        <TeamBoi :background="'#303030'" :shadow="false">
+        <TeamBoi :background="'#303030'" :shadow="false" style="overflow: auto; min-height: 3rem; max-height: 25rem">
             <NameInputs :inputs="inputs"/>
         </TeamBoi>
 </div>
