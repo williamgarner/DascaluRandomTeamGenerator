@@ -12,7 +12,7 @@
             </v-row>
         </TeamBoi>
         <TeamBoi :background="'#303030'" :shadow="false">
-            <NameInputs :key="inputs.length" :inputs="inputs"/>
+            <NameInputs :inputs="inputs"/>
         </TeamBoi>
 </div>
 </template>
