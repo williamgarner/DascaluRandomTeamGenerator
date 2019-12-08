@@ -5,8 +5,10 @@
         <h1>THE DASCALU RANDOM TEAM GENERATOR</h1>
       </v-col>
       <v-col cols="4">
-        <v-btn class="ma-2" block="true" height="60" tile color="#2337ad" dark v-if="buttonShowing" @click="progressButton">Generate Teams</v-btn>
-        <v-progress-linear value="40" height="60" color="#2337ad" background-color="#353535"v-else/>
+        <h2>
+          <v-btn class="button" block="true" height="60" tile color="#2337ad" dark v-if="buttonShowing" @click="progressButton">Generate Teams</v-btn>
+          <v-progress-linear stream buffer-value="0" height="60" color="#2337ad" background-color="#353535"v-else/>
+        </h2>
        </v-col>
     </v-row>
     <v-row justify="center">
@@ -43,11 +45,15 @@ export default {
     }
   },
   methods: {
-    progressButton(){
-      this.buttonShowing = !this.buttonShowing
+    progressButton() {
+      this.buttonShowing = !this.buttonShowing;
+      var snd = new Audio("assets/audio/notYourTeam.wav");
+      snd.currentTime=0;
+      snd.play();
     }
   }
 }
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -56,21 +62,27 @@ export default {
     /*Padding: 2rem;
       padding-top: 2rem; */
   }
-  h3 {
+  h2{
+    padding-right: 2rem;
+  }
+  h3{
     margin: 40px 0 0;
   }
-  ul {
+  ul{
     list-style-type: none;
     padding: 0;
   }
-  li {
+  li{
     display: inline-block;
     margin: 0 10px;
   }
-  a {
+  a{
     color: #42b983;
   }
-
-
+  .button{
+    font-weight: bolder;
+    flex-grow: 1;
+    font-size: 2.25rem;
+  }
 
 </style>
