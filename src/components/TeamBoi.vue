@@ -5,7 +5,6 @@
 </template>
 
 <script>
-
     export default {
         name: "TeamBoi",
         props: {
@@ -14,7 +13,7 @@
         },
         computed: {
             style() {
-                return `background: ${this.background};` + (this.shadow ? ' box-shadow: 1rem 1rem .5rem #202020;' : '');
+                return `background: ${this.background};` + (this.shadow ? ' box-shadow: .5rem .5rem .75rem #000000;' : 'margin: 1.5rem 0');
             }
         }
     }
@@ -23,7 +22,9 @@
 <style scoped>
 .team{
     flex-grow: 1;
-    margin: 0 1.5rem;
+    margin: 0;
     min-height:45rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 </style>

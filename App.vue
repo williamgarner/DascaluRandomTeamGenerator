@@ -37,6 +37,8 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+
+        padding: 2rem;
     }
     #blockColorblindContent{
         height: 0;
