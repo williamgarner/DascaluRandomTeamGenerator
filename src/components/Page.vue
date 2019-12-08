@@ -50,7 +50,6 @@ export default {
       var notTeamSnd = new Audio(require("C:\\Users\\LKram\\IdeaProjects\\DascaluRandomTeamGenerator\\assets\\audio\\notYourTeam.wav"));
       notTeamSnd.play()
       notTeamSnd.currentTime=0;
-      notTeam
     }
   }
 }

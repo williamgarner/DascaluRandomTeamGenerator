@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>Sound</title>
+</head>
+<body>
+    <audio id="yourTeamAudio">
+        <source src="assets/audio/yourTeam" /></audio> <!--audio src-->
+    <audio id="notYourTeamAudio">
+        <source src="assets/audio/notYourTeam.wav" />
+    </audio>
+
+    <div id="assessment">
+        <h1>Who played the character of Harry Potter in the movie series?</h1>
+        <button id="yourTeam">George Clooney</button>
+        <button id="notYourTeam">Daniel Radcliff</button>
+    </div>
+</body>
+
+<script>
+    const yourTeamSound = document.getElementById("yourTeamAudio");
+    const notTeamSound = document.getElementById("notYourTeamAudio");
+
+    yourTeamSound.addEventListener("click", function(){ mySound.play(); })
+
+    function wrongAnswer(e){ document.getElementById("wrongSound").play(); }
+</script>
+
+</html>
+
+
+</html>
