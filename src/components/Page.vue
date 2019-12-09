@@ -1,5 +1,9 @@
 <template>
-	<v-container fluid>
+	<v-container fluid style="width: 100%;
+    height: 100%;
+    clip: auto;
+    position: absolute;
+    overflow: hidden;">
 		<v-row justify="center" align="center">
 			<v-col>
 				<h1>THE DASCALU RANDOM TEAM GENERATOR</h1>
@@ -12,14 +16,19 @@
 			</v-col>
 		</v-row>
 		<v-row justify="center">
-			<v-col cols="6" style="padding: 0 0.4rem">
+			<v-col v-if="currentPage === 1" cols="12" style="padding: 0 0.4rem">
 				<TeamBoi :background="'#202020'" :shadow="true">
 					<StudentStuff/>
 				</TeamBoi>
 			</v-col>
-			<v-col cols="6" style="padding: 0 0.4rem">
+			<v-col v-if="currentPage === 2" cols="12" style="padding: 0 0.4rem">
 				<TeamBoi :background="'#202020'" :shadow="true">
 					<TeamStuff/>
+				</TeamBoi>
+			</v-col>
+			<v-col v-if="currentPage === 3" cols="12" style="padding: 0 0.4rem">
+				<TeamBoi :background="'#202020'" :shadow="true">
+					<team-generator/>
 				</TeamBoi>
 			</v-col>
 		</v-row>
@@ -31,17 +40,20 @@
 	import TeamBoi from "./TeamBoi";
 	import StudentStuff from "./StudentStuff";
 	import TeamStuff from "./TeamStuff";
+	import TeamGenerator from "./TeamGenerator";
 
 	export default {
 		name: 'Page', /*name of vue*/
 		components: {
+			TeamGenerator,
 			TeamStuff,
 			StudentStuff,
 			TeamBoi
 		},
 		data() {
 			return {
-				buttonShowing: true
+				buttonShowing: true,
+				currentPage: 1
 			}
 		},
 		methods: {
@@ -52,7 +64,7 @@
 				// snd.play();
 
 				const randomNames = this.shuffle(this.$store.state.names);
-
+				this.$store.state.teams
 
 
 			},
