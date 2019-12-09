@@ -7,8 +7,8 @@
                         <v-card flat tile min-height="15rem" min-width="15rem" color="grey darken-3 white--text">
                             <div class="card-title">{{team.teamName}}</div>
                             <ul>
-                                <li v-for="name in team.names">
-                                    {{name}}
+                                <li v-for="person in team.people">
+                                    {{person}}
                                 </li>
                             </ul>
                         </v-card>
