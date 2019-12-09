@@ -23,7 +23,6 @@
 .team{
     flex-grow: 1;
     margin: 0;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding: 2rem;
 }
 </style>

@@ -21,7 +21,14 @@
   body{
     height: 100%;
     width: 100%;
+
+    ms-overflow-style: none;
     overflow: hidden;
+    position: fixed;
+
+  }
+  body::-webkit-scrollbar {
+    display: none;
   }
   #app {
     /*font-family: 'Avenir', Helvetica, Arial, sans-serif;*/
@@ -40,7 +47,9 @@
     background-size: cover;
 
     padding: 0rem 0.5rem;
+
   }
+
   #blockColorblindContent{
     height: 0;
   }
