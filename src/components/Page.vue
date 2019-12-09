@@ -17,12 +17,12 @@
 					<StudentStuff/>
 				</TeamBoi>
 			</v-col>
-			<v-col v-if="currentPage === 2" cols="12" style="padding: 0 0.4rem">
+			<v-col v-else-if="currentPage === 2" cols="12" style="padding: 0 0.4rem">
 				<TeamBoi :background="'#202020'" :shadow="true">
 					<TeamStuff/>
 				</TeamBoi>
 			</v-col>
-			<v-col v-if="currentPage === 3" cols="12" style="padding: 0 0.4rem">
+			<v-col v-else-if="currentPage === 3" cols="12" style="padding: 0 0.4rem">
 				<TeamBoi :background="'#202020'" :shadow="true">
 					<team-generator/>
 				</TeamBoi>

@@ -1,5 +1,6 @@
 <template>
-	<label style="width: 100%;">
+	<label style="alignment: left;
+        align-items: flex-start;">
 		<input
 		v-for="(thisInput, index) in this.$store.state.names"
 		v-model="thisInput.value"
@@ -9,7 +10,6 @@
 		@keyup.enter="pressEnter($event, thisInput)"
 		@focusout="checkForBlank(thisInput, index)"
 		class="input"
-		style="width: 100%"
 		placeholder="Type Name"
 		>
 	</label>
@@ -47,6 +47,7 @@
 		background-color: #454545;
 		color: white;
 		margin: 0.25rem;
+		align-self: flex-start;
 	}
 
 	.input:focus{
