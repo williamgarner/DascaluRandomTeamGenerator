@@ -85,7 +85,10 @@
 
     #names {
         overflow: auto;
-        max-height: 30rem
+        max-height: 30rem;
+       alignment: left;
+        align-items: flex-start;
+        text-align: justify;
     }
 
     #top {
