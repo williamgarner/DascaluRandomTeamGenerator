@@ -58,10 +58,10 @@
 		},
 		methods: {
 			progressButton() {
-				// this.buttonShowing = !this.buttonShowing;
-				// var snd = new Audio("assets/audio/notYourTeam.wav");
-				// snd.currentTime=0;
-				// snd.play();
+				this.buttonShowing = !this.buttonShowing;
+				var snd = new Audio("assets/audio/notYourTeam.wav");
+				snd.currentTime=0;
+				snd.play();
 
 				const randomNames = this.shuffle(this.$store.state.names);
 				this.$store.state.teams
