@@ -1,6 +1,6 @@
 <template>
-    <div >
-        <TeamBoi :background="'#303030'" :shadow="false" style="margin: 0; padding: 0; height: 5rem">
+    <div id="wholeThing">
+        <TeamBoi :background="'#303030'" :shadow="false" id="top">
             <v-row dense class="row" align-content="center" justify="center">
                 <v-col cols="4" class="column">
                     <v-checkbox v-model="headersSelected" class="button" label="Headers Included" dark/>
@@ -11,7 +11,7 @@
                 </v-col>
             </v-row>
         </TeamBoi>
-        <TeamBoi :background="'#303030'" :shadow="false" style="overflow: auto; max-height: 30rem">
+        <TeamBoi id="names" :background="'#303030'" :shadow="false">
             <NameInputs/>
         </TeamBoi>
 </div>
@@ -78,6 +78,21 @@
 </script>
 
 <style scoped>
+
+    #wholeThing {
+        max-height: 35rem;
+    }
+
+    #names {
+        overflow: auto;
+        max-height: 30rem
+    }
+
+    #top {
+        margin: 0;
+        padding: 0;
+        height: 5rem
+    }
 
     .row{
         padding: 0;

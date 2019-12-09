@@ -1,9 +1,5 @@
 <template>
-	<v-container fluid style="width: 100%;
-    height: 100%;
-    clip: auto;
-    position: absolute;
-    overflow: hidden;">
+	<v-container fluid id="page">
 		<v-row justify="center" align="center">
 			<v-col>
 				<h1>THE DASCALU RANDOM TEAM GENERATOR</h1>
@@ -91,6 +87,14 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+	#page {
+		width: 100%;
+		height: 100%;
+		clip: auto;
+		position: absolute;
+		overflow: hidden;
+	}
+
 	h1{
 		/*Padding: 2rem;
 		  padding-top: 2rem; */
