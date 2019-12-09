@@ -22,7 +22,7 @@
 				</TeamBoi>
 			</v-col>
 		</v-row>
-        <v-row justify="bottom">
+        <v-row >
             <v-col cols="6">
                 <v-btn class="button" :block="true" height="60" tile color="#2337ad" dark v-if="currentPage === 2 || currentPage === 3" @click="backButton">Back</v-btn>
             </v-col>

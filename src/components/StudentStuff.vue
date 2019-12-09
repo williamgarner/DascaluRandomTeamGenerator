@@ -6,8 +6,8 @@
                     <v-checkbox v-model="headersSelected" class="button" label="Headers Included" dark large/>
                 </v-col>
                 <v-col cols="7" class="column">
-                    <v-btn style="color: white;" class="button" block color="blue darken-4" x-large tile @click="$refs.fileUpload.click()">Click to Upload Names</v-btn>
-                    <input hidden type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" ref="fileUpload" @click="clearInput" @change="parseFile($event.target.name, $event.target.files)" >
+                    <v-btn style="color: white;" class="button" block color="blue darken-4" x-large tile @click="$refs.fileUpload.click()">Click to Upload A CSV</v-btn>
+                    <input hidden type="file" accept=".csv" ref="fileUpload" @click="clearInput" @change="parseFile($event.target.name, $event.target.files)" >
                 </v-col>
             </v-row>
         </TeamBoi>
