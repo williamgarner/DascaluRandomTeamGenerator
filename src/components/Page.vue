@@ -53,7 +53,7 @@
 		data() {
 			return {
 				buttonShowing: true,
-				currentPage: 3
+				currentPage: 1
 			}
 		},
 		methods: {
@@ -63,13 +63,27 @@
 				snd.currentTime=0;
 				snd.play();
 
-				//const randomNames = this.shuffle(this.$store.state.names);
-				//this.$store.state.teams
+				const randomNames = this.shuffle(this.$store.state.names);
+				console.log(randomNames);
+
+				let currentName = 0;
+				this.$store.state.teams.forEach((team) => {
+					console.log(currentName);
+					team.people = randomNames.slice(currentName,  currentName + team.numberOfPeople).map(name => name.value);
+					currentName += team.numberOfPeople;
+				});
 			},
             backButton(){
 			    this.currentPage--;
+			    if(this.currentPage === 1) {
+					this.$store.state.names.push({
+						value: '',
+						addNext: true
+					});
+				}
             },
 			nextButton(){
+				this.$store.state.names = this.$store.state.names.filter((name) => {return name.value !== ''});
 				this.currentPage++;
 			},
 			shuffle(arra1) {
@@ -98,9 +112,9 @@
 	#page {
 		width: 100%;
 		height: 100%;
-		clip: auto;
-		position: absolute;
-		overflow: hidden;
+		/*clip: auto;*/
+		/*position: absolute;*/
+		/*overflow: hidden;*/
 	}
 
 	h1{
