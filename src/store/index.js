@@ -6,7 +6,26 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     names: [{value: '', addNext: true}],
-    teams: [{teamName: 'Team 1', names: []}]
+    teams: [{teamName: 'Team 1', names: ['bob', 'terry']},
+      {teamName: 'Team 1', names: ['bob', 'terry']},
+      {teamName: 'Team 1', names: ['bob', 'terry']},
+      {teamName: 'Team 1', names: ['bob', 'terry']},
+      {teamName: 'Team 1', names: ['bob', 'terry']},
+      {teamName: 'Team 1', names: ['bob', 'terry']},
+      {teamName: 'Team 1', names: ['bob', 'terry']},
+      {teamName: 'Team 1', names: ['bob', 'terry']},
+      {teamName: 'Team 1', names: ['bob', 'terry']},
+      {teamName: 'Team 1', names: ['bob', 'terry']},
+      {teamName: 'Team 1', names: ['bob', 'terry']},
+      {teamName: 'Team 1', names: ['bob', 'terry']},
+      {teamName: 'Team 1', names: ['bob', 'terry']},
+      {teamName: 'Team 1', names: ['bob', 'terry']},
+      {teamName: 'Team 1', names: ['bob', 'terry']},
+      {teamName: 'Team 1', names: ['bob', 'terry']},
+      {teamName: 'Team 1', names: ['bob', 'terry']},
+      {teamName: 'Team 1', names: ['bob', 'terry']},
+      {teamName: 'Team 1', names: ['bob', 'terry']},
+      {teamName: 'Team 1', names: ['bob', 'terry']}]
   },
   mutations: {
   },

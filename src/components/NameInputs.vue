@@ -11,6 +11,7 @@
 		@focusout="checkForBlank(thisInput, index)"
 		class="input"
 		placeholder="Type Name"
+		onfocus="this.placeholder = ''"
 		>
 	</label>
 </template>
@@ -58,6 +59,7 @@
 
 	input::placeholder {
 		text-align: center;
+		color: white;
 	}
 
 </style>

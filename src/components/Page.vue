@@ -13,12 +13,12 @@
 			</v-col>
 			<v-col v-else-if="currentPage === 2" cols="12" style="padding: 0 0.4rem">
 				<TeamBoi :background="'#202020'" :shadow="true">
-					<TeamStuff/>
+
 				</TeamBoi>
 			</v-col>
 			<v-col v-else-if="currentPage === 3" cols="12" style="padding: 0 0.4rem">
 				<TeamBoi :background="'#202020'" :shadow="true">
-					<team-generator/>
+					<TeamDetails/>
 				</TeamBoi>
 			</v-col>
 		</v-row>
@@ -39,21 +39,19 @@
 
 	import TeamBoi from "./TeamBoi";
 	import StudentStuff from "./StudentStuff";
-	import TeamStuff from "./TeamStuff";
-	import TeamGenerator from "./TeamGenerator";
+	import TeamDetails from "./TeamDetails";
 
 	export default {
 		name: 'Page', /*name of vue*/
 		components: {
-			TeamGenerator,
-			TeamStuff,
-			StudentStuff,
-			TeamBoi
+		    StudentStuff,
+			TeamBoi,
+            TeamDetails,
 		},
 		data() {
 			return {
 				buttonShowing: true,
-				currentPage: 3
+				currentPage:1
 			}
 		},
 		methods: {
@@ -101,6 +99,7 @@
 		clip: auto;
 		position: absolute;
 		overflow: hidden;
+		padding: 0 3rem;
 	}
 
 	h1{
