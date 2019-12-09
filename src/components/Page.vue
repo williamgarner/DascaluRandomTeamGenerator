@@ -4,11 +4,6 @@
 			<v-col>
 				<h1>THE DASCALU RANDOM TEAM GENERATOR</h1>
 			</v-col>
-			<v-col cols="4">
-				<h2>
-
-				</h2>
-			</v-col>
 		</v-row>
 		<v-row justify="center">
 			<v-col v-if="currentPage === 1" cols="12" style="padding: 0 0.4rem">
@@ -35,8 +30,6 @@
                 <v-btn class="button" :block="true" height="60" tile color="#2337ad" dark v-if="currentPage === 1" @click="nextButton">Next</v-btn>
                 <v-btn class="button" :block="true" height="60" tile color="#2337ad" dark v-if="currentPage === 2" @click="generateButton">Generate Teams</v-btn>
                 <v-progress-linear stream buffer-value="0" height="60" color="#2337ad" background-color="#353535" v-if="currentPage === 3"/>
-
-                <!--    <v-btn class="button" :block="true" height="60" tile color="#2337ad" dark v-if="buttonShowing" @click="generateButton">Generate Teams</v-btn> -->
             </v-col>
         </v-row>
 	</v-container>
