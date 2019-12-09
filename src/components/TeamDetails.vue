@@ -36,7 +36,7 @@
     }
     .button-control{
         display: flex;
-        height:43rem;
+        height:42rem;
         overflow: auto;
     }
 
@@ -50,6 +50,7 @@
         padding: 1rem;
         font-size: 2rem;
         flex-grow: 1;
+        font-weight: bold;
     }
     .card-control{
         display: flex;

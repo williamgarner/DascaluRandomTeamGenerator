@@ -7,17 +7,17 @@
 		</v-row>
 		<v-row justify="center">
 			<v-col v-if="currentPage === 1" cols="12" style="padding: 0 0.4rem">
-				<TeamBoi :background="'#202020'" :shadow="true">
+				<TeamBoi :background="'#202020'" :shadow="true" style="margin-bottom: 1rem;">
 					<StudentStuff/>
 				</TeamBoi>
 			</v-col>
 			<v-col v-else-if="currentPage === 2" cols="12" style="padding: 0 0.4rem">
-				<TeamBoi :background="'#202020'" :shadow="true">
-
+				<TeamBoi :background="'#202020'" :shadow="true" style="margin-bottom: 1rem;height:">
+					<Customization/>
 				</TeamBoi>
 			</v-col>
 			<v-col v-else-if="currentPage === 3" cols="12" style="padding: 0 0.4rem">
-				<TeamBoi :background="'#202020'" :shadow="true">
+				<TeamBoi :background="'#202020'" :shadow="true" style="margin-bottom: 1rem;">
 					<TeamDetails/>
 				</TeamBoi>
 			</v-col>
@@ -28,7 +28,7 @@
             </v-col>
             <v-col cols="6">
                 <v-btn class="button" :block="true" height="60" tile color="#2337ad" dark v-if="currentPage === 1" @click="nextButton">Next</v-btn>
-                <v-btn class="button" :block="true" height="60" tile color="#2337ad" dark v-if="currentPage === 2" @click="generateButton">Generate Teams</v-btn>
+                <v-btn :disabled="$store.state.genAvailable" class="button" :block="true" height="60" tile color="#2337ad" dark v-if="currentPage === 2" @click="generateButton">Generate Teams</v-btn>
                 <v-progress-linear stream buffer-value="0" height="60" color="#2337ad" background-color="#353535" v-if="currentPage === 3"/>
             </v-col>
         </v-row>
@@ -40,6 +40,7 @@
 	import TeamBoi from "./TeamBoi";
 	import StudentStuff from "./StudentStuff";
 	import TeamDetails from "./TeamDetails";
+	import Customization from "./Customization";
 
 	export default {
 		name: 'Page', /*name of vue*/
@@ -47,6 +48,7 @@
 		    StudentStuff,
 			TeamBoi,
             TeamDetails,
+			Customization
 		},
 		data() {
 			return {
@@ -66,9 +68,8 @@
 
 				let currentName = 0;
 				this.$store.state.teams.forEach((team) => {
-					console.log(currentName);
-					team.people = randomNames.slice(currentName,  currentName + team.numberOfPeople).map(name => name.value);
-					currentName += team.numberOfPeople;
+					team.people = randomNames.slice(currentName,  currentName + parseInt(team.numberOfPeople, 10)).map(name => name.value);
+					currentName += parseInt(team.numberOfPeople, 10);
 				});
 			},
             backButton(){

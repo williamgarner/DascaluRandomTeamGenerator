@@ -1,6 +1,5 @@
 <template>
-	<label style="alignment: left;
-        align-items: flex-start;">
+	<label style="alignment: left;">
 		<input
 		v-for="(thisInput, index) in this.$store.state.names"
 		v-model="thisInput.value"
@@ -44,11 +43,15 @@
 </script>
 
 <style scoped>
+
 	.input{
 		background-color: #454545;
 		color: white;
 		margin: 0.25rem;
-		align-self: flex-start;
+		padding-left: .25rem;
+		width: 19.75rem;
+
+
 	}
 
 	.input:focus{
