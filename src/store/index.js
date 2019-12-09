@@ -5,7 +5,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    names: [{value: '', addNext: true}]
+    names: [{value: '', addNext: true}],
+    teams: [{teamName: 'Team 1', names: []}]
   },
   mutations: {
   },
