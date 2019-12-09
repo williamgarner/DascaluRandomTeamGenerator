@@ -6,8 +6,7 @@
 			</v-col>
 			<v-col cols="4">
 				<h2>
-					<v-btn class="button" :block="true" height="60" tile color="#2337ad" dark v-if="buttonShowing" @click="progressButton">Generate Teams</v-btn>
-					<v-progress-linear stream buffer-value="0" height="60" color="#2337ad" background-color="#353535"v-else/>
+
 				</h2>
 			</v-col>
 		</v-row>
@@ -28,6 +27,18 @@
 				</TeamBoi>
 			</v-col>
 		</v-row>
+        <v-row justify="bottom">
+            <v-col cols="6">
+                <v-btn class="button" :block="true" height="60" tile color="#2337ad" dark v-if="currentPage === 2 || currentPage === 3" @click="backButton">Back</v-btn>
+            </v-col>
+            <v-col cols="6">
+                <v-btn class="button" :block="true" height="60" tile color="#2337ad" dark v-if="currentPage === 1">Next</v-btn>
+                <v-btn class="button" :block="true" height="60" tile color="#2337ad" dark v-if="currentPage === 2">Generate Teams</v-btn>
+                <v-progress-linear stream buffer-value="0" height="60" color="#2337ad" background-color="#353535" v-if="currentPage === 3"/>
+
+                <!--    <v-btn class="button" :block="true" height="60" tile color="#2337ad" dark v-if="buttonShowing" @click="generateButton">Generate Teams</v-btn> -->
+            </v-col>
+        </v-row>
 	</v-container>
 </template>
 
@@ -49,21 +60,24 @@
 		data() {
 			return {
 				buttonShowing: true,
-				currentPage: 1
+				currentPage: 3
 			}
 		},
 		methods: {
-			progressButton() {
-				this.buttonShowing = !this.buttonShowing;
-				var snd = new Audio("assets/audio/notYourTeam.wav");
+			generateButton() {
+				//this.buttonShowing = !this.buttonShowing;
+				//currentPage === 3;
+                var snd = new Audio("assets/audio/notYourTeam.wav");
 				snd.currentTime=0;
 				snd.play();
 
 				const randomNames = this.shuffle(this.$store.state.names);
 				this.$store.state.teams
-
-
 			},
+            backButton(){
+			    //currentPage--;
+            },
+
 			shuffle(arra1) {
 				var ctr = arra1.length, temp, index;
 
